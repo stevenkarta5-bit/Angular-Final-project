@@ -8,7 +8,7 @@ export const dataStatic = [
         isRo: true,
         income: 5000000,
         jatuhTempo: new Date("2025-09-22"),
-        registeredSince: new Date("2022-01-22")
+        registeredSince: new Date("2022-10-01")
     },
         {
         name: "Riyandi",
@@ -19,7 +19,7 @@ export const dataStatic = [
         isRo: true,
         income: 7000000,
         jatuhTempo: new Date("2025-09-17"),
-        registeredSince: new Date("2022-01-22")
+        registeredSince: new Date("2025-03-25")
     },
         {
         name: "kemal",
@@ -30,7 +30,7 @@ export const dataStatic = [
         isRo: true,
         income: 3400000,
         jatuhTempo: new Date("2025-10-28"),
-        registeredSince: new Date("2022-01-22")
+        registeredSince: new Date("2021-05-12")
     }
 
 ]
