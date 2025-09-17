@@ -1,0 +1,26 @@
+<h3>Form Registration Customer</h3>
+<form action="" [formGroup]="formRegister" (ngSubmit)="submissionOnClick()">
+
+<label for="name">Name: </label> <br>
+<input type="text" name="name" id="name" formControlName="name"> <br><br>
+
+<label for="address">Address: </label> <br>
+<input type="text" name="address" id="address" formControlName="address"> <br><br>
+
+<label for="status">Status: </label> <br>
+<input type="text" name="status" id="status" formControlName="status"> <br><br>
+
+<label for="email">Email: </label> <br>
+<input type="email" name="email" id="email" formControlName="email"> <br><br>
+
+<label for="noHp">Phone: </label> <br>
+<input type="text" name="noHp" id="noHp" formControlName="noHp"> <br><br>
+
+<label for="income">Income (Rp): </label>
+<input type="number" name="income" id="income" formControlName="income"> <br><br>
+
+<button type="submit">Add Customer</button>
+
+</form>
+
+
