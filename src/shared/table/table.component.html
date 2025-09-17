@@ -1,0 +1,27 @@
+
+
+<h3>Table Data</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Status</th>
+      <th>Email</th>
+      <th>No HP</th>
+      <th>Is RO</th>
+      <th>Income</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of recieverDataFromInput">
+      <td>{{ customer.name }}</td> 
+        <td>{{ customer.address }}</td>
+      <td>{{ customer.status }}</td>
+      <td>{{ customer.email }}</td>
+      <td>{{ customer.noHp }}</td>
+      <td>{{ customer.isRo }}</td>
+      <td>{{ customer.income }}</td>
+    </tr>
+  </tbody>
+</table>
