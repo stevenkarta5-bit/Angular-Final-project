@@ -6,7 +6,9 @@ export const dataStatic = [
         email: "abc@gmail.com",
         noHp: "08123444789",
         isRo: true,
-        income: 5000000
+        income: 5000000,
+        jatuhTempo: new Date("2025-09-22"),
+        registeredSince: new Date("2022-01-22")
     },
         {
         name: "Riyandi",
@@ -15,7 +17,9 @@ export const dataStatic = [
         email: "1234@gmail.com",
         noHp: "08123456789",
         isRo: true,
-        income: 7000000
+        income: 7000000,
+        jatuhTempo: new Date("2025-09-17"),
+        registeredSince: new Date("2022-01-22")
     },
         {
         name: "kemal",
@@ -24,7 +28,9 @@ export const dataStatic = [
         email: "kOCAK@gmail.com",
         noHp: "0219558423",
         isRo: true,
-        income: 3400000
+        income: 3400000,
+        jatuhTempo: new Date("2025-10-28"),
+        registeredSince: new Date("2022-01-22")
     }
 
 ]
