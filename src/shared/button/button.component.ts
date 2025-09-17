@@ -4,7 +4,7 @@ import { Router, RouterLink } from "@angular/router";
 @Component({
   selector: 'share-button',
   standalone: true,
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './button.component.html',
   styleUrl: './button.component.scss'
 })

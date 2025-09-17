@@ -45,16 +45,37 @@
       </small>
     </div>
 
-    <!-- Income -->
+   <!-- Income -->
     <div class="form-group">
       <label for="income">Income (Rp)</label>
       <input type="number" id="income" formControlName="income" />
     </div>
 
-    <button type="submit" class="btn-primary" [disabled]="formRegister.invalid" (click)="goToHomePage()">
+    <!-- Is Ro -->
+    <div class="form-group">
+      <label for="isRo">Is Ro</label>
+      <input type="checkbox" id="isRo" formControlName="isRo" />
+    </div>
+
+    <!-- Jatuh Tempo -->
+    <div class="form-group">
+      <label for="jatuhTempo">Jatuh Tempo</label>
+      <input type="date" id="jatuhTempo" formControlName="jatuhTempo" />
+    </div>
+
+    <!-- Registered Since -->
+    <div class="form-group">
+      <label for="registeredSince">Tanggal Masuk</label>
+      <input type="date" id="registeredSince" formControlName="registeredSince" />
+    </div>
+
+    <button type="submit" class="btn-primary" [disabled]="formRegister.invalid">
       Add Customer
     </button>
 
-    <button type="button" class="btn-secondary" (click)="goToHomePage()">Cancel</button>
+    <!-- Cancel -->
+    <button type="button" class="btn-secondary" (click)="goToHomePage()">
+      Cancel
+    </button>
   </form>
 </div>

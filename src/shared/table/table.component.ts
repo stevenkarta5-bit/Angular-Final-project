@@ -10,8 +10,7 @@ import { InputCustomerComponent } from '../input-customer/input-customer.compone
   standalone: true,
   imports: [
     CommonModule,
-    ButtonComponent,
-    InputCustomerComponent
+    ButtonComponent
 ],
   templateUrl: './table.component.html',
   styleUrl: './table.component.scss'
@@ -21,9 +20,12 @@ export class TableComponent {
     ...dataStatic
   ];
 
-  handleInput(event: DataCustomer) {
-    this.recieverDataFromInput.push(event);
-    // console.log(this.recieverDataFromInput)
+  handleInput(dataCustomer: DataCustomer) {
+      const newCustomer = {
+    ...dataCustomer,
+        id: this.recieverDataFromInput.length + 1
+      };
+      this.recieverDataFromInput.push(newCustomer);
   }
 
 }

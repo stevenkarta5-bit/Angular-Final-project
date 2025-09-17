@@ -1,7 +1,7 @@
+<!-- <share-input-customer (click-event)="handleInput($event)"></share-input-customer> -->
 <div class="home-container">
   <h3>Table Data</h3>
   <share-button></share-button>
-  <!-- <share-input-customer (click-event)="handleInput($event)"></share-input-customer> -->
   <table>
     <thead>
       <tr>
@@ -14,6 +14,7 @@
         <th>Income</th>
         <th>Jatuh Tempo</th>
         <th>Registered Since</th>
+         <th>Details</th>
       </tr>
     </thead>
     <tbody>
@@ -23,10 +24,11 @@
         <td>{{ customer.status }}</td>
         <td>{{ customer.email }}</td>
         <td>{{ customer.noHp }}</td>
-        <td>{{ customer.isRo }}</td>
+        <td>{{ customer.isRo ? 'Yes' : 'No' }}</td>
         <td>{{ customer.income | currency:'Rp '}}</td>
         <td>{{ customer.jatuhTempo | date:'shortDate' }}</td>
         <td>{{ customer.registeredSince | date:'shortDate' }}</td>
+        <td></td>
       </tr>
     </tbody>
   </table>

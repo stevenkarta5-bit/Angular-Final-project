@@ -18,21 +18,25 @@ export class InputCustomerComponent {
     private router : Router
   ){
     this.formRegister = new FormGroup({
-      name: new FormControl('', Validators.required),
-      address: new FormControl('', Validators.required),
-      status: new FormControl('', Validators.required),
-      email: new FormControl('', Validators.required),
-      noHp: new FormControl('', Validators.required),
-      isRo: new FormControl(false, Validators.required),
-      income: new FormControl('', Validators.required)
+      name: new FormControl<string>('', { validators: Validators.required }),
+      address: new FormControl<string>('', { validators: Validators.required }),
+      status: new FormControl<string>('', { validators: Validators.required }),
+      email: new FormControl<string>('', { validators: [Validators.required, Validators.email] }),
+      noHp: new FormControl<string>('', { validators: Validators.required }),
+      isRo: new FormControl<boolean>(false),
+      income: new FormControl<number | null>(null, { validators: Validators.required }),
+      jatuhTempo: new FormControl<Date | null>(null, { validators: Validators.required }),
+      registeredSince: new FormControl<Date | null>(null, { validators: Validators.required }),
     });
+
   }
 
   @Output() clickEvent = new EventEmitter<DataCustomer>();
-  submissionOnClick(){
-    // this.clickEvent.emit({...this.creditur});
-    // console.log('event')
-    this.clickEvent.emit({...this.formRegister.value});
+  submissionOnClick() {
+  if (this.formRegister.valid) {
+    this.clickEvent.emit({ ...this.formRegister.value });
+    this.formRegister.reset(); // clear form after submission
+  }
   }
 
   goToHomePage(){
