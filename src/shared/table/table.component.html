@@ -12,6 +12,8 @@
         <th>No HP</th>
         <th>Is RO</th>
         <th>Income</th>
+        <th>Jatuh Tempo</th>
+        <th>Registered Since</th>
       </tr>
     </thead>
     <tbody>
@@ -23,6 +25,8 @@
         <td>{{ customer.noHp }}</td>
         <td>{{ customer.isRo }}</td>
         <td>{{ customer.income | currency:'Rp '}}</td>
+        <td>{{ customer.jatuhTempo | date:'shortDate' }}</td>
+        <td>{{ customer.registeredSince | date:'shortDate' }}</td>
       </tr>
     </tbody>
   </table>

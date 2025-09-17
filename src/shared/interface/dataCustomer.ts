@@ -5,6 +5,8 @@ export interface    DataCustomer {
         email: string,
         noHp: string,
         isRo: boolean,
-        income: number
+        income: number,
+        jatuhTempo: Date,
+        registeredSince: Date
 
 }
