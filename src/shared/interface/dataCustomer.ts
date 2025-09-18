@@ -1,12 +1,12 @@
 export interface    DataCustomer {
         name?: string,
         address?: string,
-        status?: string,
+        status?: boolean,
         email?: string,
-        noHp?: string,
+        phone?: string,
         isRo?: boolean,
         income?: number,
-        jatuhTempo?: Date,
+        dueDate: Date,
         registeredSince?: Date
 
 }

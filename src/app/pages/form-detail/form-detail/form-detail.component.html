@@ -12,7 +12,7 @@
     </div>
     <div class="detail-row">
       <span class="label">Status:</span>
-      <span class="value">{{ customer.status | uppercase }}</span>
+      <span class="value">{{ customer.status ? 'Active' : 'Inactive' | uppercase}}</span>
     </div>
     <div class="detail-row">
       <span class="label">Email:</span>
@@ -20,7 +20,7 @@
     </div>
     <div class="detail-row">
       <span class="label">No HP:</span>
-      <span class="value">{{ customer.noHp | uppercase }}</span>
+      <span class="value">{{ customer.phone | uppercase }}</span>
     </div>
     <div class="detail-row">
       <span class="label">Repeat Order Customer:</span>
@@ -36,7 +36,7 @@
     </div>
     <div class="detail-row">
       <span class="label">Jatuh Tempo:</span>
-      <span class="value due-date">{{ customer.jatuhTempo | date:'longDate' | uppercase}}</span>
+      <span class="value due-date">{{ customer.dueDate | date:'longDate' | uppercase}}</span>
     </div>
   </div>
 

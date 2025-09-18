@@ -3,7 +3,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { DataCustomer } from '../interface/dataCustomer';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { CustomerServiceService } from '../service/customer-service.service';
+import { CustomerServiceService } from '../service/customer/customer-service.service';
 
 @Component({
   selector: 'share-input-customer',
@@ -27,13 +27,13 @@ export class InputCustomerComponent {
     this.formRegister = new FormGroup({
       name: new FormControl('', Validators.required),
       address: new FormControl('', Validators.required),
-      status: new FormControl('sudah bayar (DP)', Validators.required),
+      status: new FormControl(true, Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
-      noHp: new FormControl('', Validators.required),
+      phone: new FormControl('', Validators.required),
       isRo: new FormControl(false),
       income: new FormControl(0, Validators.required),
       registeredSince: new FormControl(registeredSince),
-      jatuhTempo: new FormControl(jatuhTempo)
+      dueDate: new FormControl(jatuhTempo)
     });
   }
 

@@ -17,15 +17,19 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let customer of recieverDataFromInput">
+      <tr *ngFor="let customer of recieverDataFromInput"
+       [ngClass]="{
+        'near-due': isNearDueDate(customer.dueDate),
+        'over-due': isOverdue(customer.dueDate)
+      }">
         <td>{{ customer.name }}</td> 
         <td>{{ customer.address }}</td>
-        <td>{{ customer.status }}</td>
+        <td>{{ customer.status ? 'Active' : 'Inactive' | uppercase}}</td>
         <td>{{ customer.email }}</td>
-        <td>{{ customer.noHp }}</td>
+        <td>{{ customer.phone }}</td>
         <!-- <td>{{ customer.isRo }}</td> -->
         <td>{{ customer.income | currency:'Rp '}}</td>
-        <td>{{ customer.jatuhTempo | date:'shortDate' }}</td>
+        <td>{{ customer.dueDate | date:'longDate' }}</td>
         <!-- <td>{{ customer.registeredSince | date:'shortDate' }}</td> -->
         <td><button class="btn-primary"  (click)="goToDetail(customer.name)">Detail</button></td>
       </tr>

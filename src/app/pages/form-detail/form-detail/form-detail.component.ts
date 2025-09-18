@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { DataCustomer } from '../../../../shared/interface/dataCustomer';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CustomerServiceService } from '../../../../shared/service/customer-service.service';
+import { CustomerServiceService } from '../../../../shared/service/customer/customer-service.service';
 import { CommonModule } from '@angular/common';
-import { ReminderService } from '../../../../shared/service/reminder.service';
+import { ReminderService } from '../../../../shared/service/reminder/reminder.service';
 
 @Component({
   selector: 'app-form-detail',
@@ -36,7 +36,7 @@ export class FormDetailComponent {
   }
 
   get showReminder(): boolean {
-    return this.reminderService.isReminderAvailable(this.customer?.jatuhTempo);
+    return this.reminderService.isReminderAvailable(this.customer?.dueDate);
   }
 
   get showOffering(): boolean {
