@@ -19,14 +19,21 @@ export class InputCustomerComponent {
     private router: Router,
     private customerService: CustomerServiceService
   ) {
+    const registeredSince = new Date();
+    const jatuhTempo = new Date(registeredSince.getTime());
+    jatuhTempo.setDate(jatuhTempo.getDate() + 3);
+
+    console.log(jatuhTempo);
     this.formRegister = new FormGroup({
       name: new FormControl('', Validators.required),
       address: new FormControl('', Validators.required),
-      status: new FormControl('', Validators.required),
+      status: new FormControl('sudah bayar (DP)', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
       noHp: new FormControl('', Validators.required),
       isRo: new FormControl(false),
-      income: new FormControl(0, Validators.required)
+      income: new FormControl(0, Validators.required),
+      registeredSince: new FormControl(registeredSince),
+      jatuhTempo: new FormControl(jatuhTempo)
     });
   }
 
@@ -34,8 +41,8 @@ export class InputCustomerComponent {
     if (this.formRegister.valid) {
       const customer: DataCustomer = {
         ...this.formRegister.value,
-        jatuhTempo: new Date(),
-        registeredSince: new Date()
+        // jatuhTempo: new Date(),
+        // registeredSince: new Date()
       };
       this.customerService.addCustomer(customer);
       this.router.navigate(['']); // go back to table

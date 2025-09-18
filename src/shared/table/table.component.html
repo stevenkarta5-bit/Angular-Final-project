@@ -9,10 +9,11 @@
         <th>Status</th>
         <th>Email</th>
         <th>No HP</th>
-        <th>Is RO</th>
+        <!-- <th>Is RO</th> -->
         <th>Income</th>
         <th>Jatuh Tempo</th>
-        <th>Registered Since</th>
+        <!-- <th>Registered Since</th> -->
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -22,10 +23,11 @@
         <td>{{ customer.status }}</td>
         <td>{{ customer.email }}</td>
         <td>{{ customer.noHp }}</td>
-        <td>{{ customer.isRo }}</td>
+        <!-- <td>{{ customer.isRo }}</td> -->
         <td>{{ customer.income | currency:'Rp '}}</td>
         <td>{{ customer.jatuhTempo | date:'shortDate' }}</td>
-        <td>{{ customer.registeredSince | date:'shortDate' }}</td>
+        <!-- <td>{{ customer.registeredSince | date:'shortDate' }}</td> -->
+        <td><button class="btn-primary"  (click)="goToDetail(customer.name)">Detail</button></td>
       </tr>
     </tbody>
   </table>

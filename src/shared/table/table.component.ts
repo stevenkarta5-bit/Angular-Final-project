@@ -4,7 +4,7 @@ import { dataStatic } from '../data';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../button/button.component';
 import { InputCustomerComponent } from '../input-customer/input-customer.component';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { CustomerServiceService } from '../service/customer-service.service';
 
 @Component({
@@ -13,7 +13,8 @@ import { CustomerServiceService } from '../service/customer-service.service';
   imports: [
     CommonModule,
     ButtonComponent,
-    InputCustomerComponent
+    RouterLink
+    // InputCustomerComponent
 ],
   templateUrl: './table.component.html',
   styleUrl: './table.component.scss'
@@ -22,9 +23,16 @@ export class TableComponent implements OnInit{
 
   recieverDataFromInput: DataCustomer[] = [];
 
-  constructor(private customerService: CustomerServiceService) {}
+  constructor(
+    private router : Router,
+    private customerService: CustomerServiceService)
+    {}
 
   ngOnInit() {
     this.recieverDataFromInput = this.customerService.getCustomers();
+  }
+
+  goToDetail(name?: string){
+    this.router.navigate(['detail-customer', name]);
   }
 }
