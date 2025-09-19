@@ -1,0 +1,55 @@
+$primary-color: #4CAF50;
+$text-color: #333;
+$background-color: #f8f9fa;
+
+.not-found-body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: $background-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.not-found {
+  text-align: center;
+  padding: 2rem;
+
+  h1 {
+    font-size: 8rem;
+    margin: 0;
+    color: $primary-color;
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin: 1rem 0;
+    color: $text-color;
+  }
+
+  p {
+    font-size: 1rem;
+    color: darken($text-color, 20%);
+    margin-bottom: 2rem;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: $primary-color;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: darken($primary-color, 10%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+  }
+}

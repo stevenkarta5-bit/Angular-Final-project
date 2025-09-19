@@ -1,4 +1,4 @@
-export interface    DataCustomer {
+export interface DataCustomer {
         name?: string,
         address?: string,
         status?: boolean,
@@ -8,5 +8,4 @@ export interface    DataCustomer {
         income?: number,
         dueDate: Date,
         registeredSince?: Date
-
 }
