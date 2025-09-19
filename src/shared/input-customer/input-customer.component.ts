@@ -45,11 +45,11 @@ export class InputCustomerComponent {
         // registeredSince: new Date()
       };
       this.customerService.addCustomer(customer);
-      this.router.navigate(['']); // go back to table
+      this.router.navigate(['home']); // go back to table
     }
   }
 
   goToHomePage(){
     this.router.navigate(['home']);
-
+  }
 }

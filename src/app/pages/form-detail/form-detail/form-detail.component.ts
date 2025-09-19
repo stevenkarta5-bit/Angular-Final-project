@@ -32,7 +32,7 @@ export class FormDetailComponent {
   }
 
   goToHome(){
-    this.router.navigate(['']);
+    this.router.navigate(['home']);
   }
 
   get showReminder(): boolean {
