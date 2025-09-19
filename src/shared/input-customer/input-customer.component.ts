@@ -36,7 +36,7 @@ export class InputCustomerComponent {
   }
 
   goToHomePage(){
-    this.router.navigate(['']);
+    this.router.navigate(['home']);
   }
 
 }
