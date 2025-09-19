@@ -5,7 +5,7 @@ export const dataStatic = [
         status: "nunggak",
         email: "abc@gmail.com",
         noHp: "08123444789",
-        isRo: true,
+        isRo: false,
         income: 5000000,
         jatuhTempo: new Date("2025-09-22"),
         registeredSince: new Date("2022-10-01")

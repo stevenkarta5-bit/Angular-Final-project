@@ -1,0 +1,56 @@
+<div class="detail-container" *ngIf="customer; else notFound">
+  <h2 class="title">Customer Detail</h2>
+
+  <div class="detail-card">
+    <div class="detail-row">
+      <span class="label">Name:</span>
+      <span class="value">{{ customer.name | uppercase}}</span>
+    </div>
+    <div class="detail-row">
+      <span class="label">Address:</span>
+      <span class="value">{{ customer.address | uppercase }}</span>
+    </div>
+    <div class="detail-row">
+      <span class="label">Status:</span>
+      <span class="value">{{ customer.status ? 'Active' : 'Inactive' | uppercase}}</span>
+    </div>
+    <div class="detail-row">
+      <span class="label">Email:</span>
+      <span class="value">{{ customer.email | uppercase }}</span>
+    </div>
+    <div class="detail-row">
+      <span class="label">No HP:</span>
+      <span class="value">{{ customer.phone | uppercase }}</span>
+    </div>
+    <div class="detail-row">
+      <span class="label">Repeat Order Customer:</span>
+      <span class="value">{{ customer.isRo ? 'Yes' : 'No'  | uppercase}}</span>
+    </div>
+    <div class="detail-row">
+      <span class="label">Income:</span>
+      <span class="value">{{ customer.income | currency:'Rp ':'symbol':'1.0-0' }}</span>
+    </div>
+    <div class="detail-row">
+      <span class="label">Registered Since:</span>
+      <span class="value">{{ customer.registeredSince | date:'longDate' | uppercase }}</span>
+    </div>
+    <div class="detail-row">
+      <span class="label">Jatuh Tempo:</span>
+      <span class="value due-date">{{ customer.dueDate | date:'longDate' | uppercase}}</span>
+    </div>
+  </div>
+
+   <div class="actions">
+    <button (click)="goToHome()" class="back-btn">← Back to Table</button>
+    <button *ngIf="showReminder" (click)="sendReminder()" class="reminder-btn">
+      🔔 Send Reminder
+    </button>
+    <button *ngIf="showOffering" (click)="sendOffering()" class="offering-btn">
+    🎁 Send Offering
+  </button>
+  </div>
+</div>
+
+<ng-template #notFound>
+  <div class="not-found">❌ Customer not found.</div>
+</ng-template>
